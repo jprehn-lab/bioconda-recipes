@@ -9,7 +9,7 @@ source:
 build:
   noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  script: "{{ PYTHON }} -m pip install . -vv"
   entry_points:
     - humanfilt=humanfilt.cli:main
 
@@ -26,19 +26,21 @@ requirements:
     - bowtie2
     - kraken2
     - trim-galore
-    - bbmap     # bbduk.sh, dedupe.sh
+    - bbmap
     - fastuniq
     - seqkit
     - pigz
 
 test:
+  imports:
+    - humanfilt
   commands:
-    - humanfilt --help 
+    - humanfilt --help
 
 about:
   home: https://github.com/jprehn-lab/humanfilt
   license: MIT
-  summary: WGS human read filtering with auto-downloaded references (GRCh38/T2T/HPRC/UniVec + Kraken2).
+  summary: "WGS human-read filtering with auto-downloaded human references"
 
 extra:
   recipe-maintainers:
