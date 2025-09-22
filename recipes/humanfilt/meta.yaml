@@ -33,8 +33,7 @@ requirements:
 
 test:
   commands:
-    - humanfilt --help
-    - humanfilt 
+    - humanfilt --help 
 
 about:
   home: https://github.com/jprehn-lab/humanfilt
