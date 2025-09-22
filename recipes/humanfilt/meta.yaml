@@ -3,12 +3,13 @@ package:
   version: 0.1.0
 
 source:
-  url: https://github.com/your-org/humanfilt/archive/refs/tags/v0.1.0.tar.gz
+  url: https://github.com/jprehn-lab/humanfilt/archive/refs/tags/v0.1.0.tar.gz
   sha256: 0f9f96e41e019181bcc15fa0bad0d8c2494032c9fb6d0a8d9bd00799715e8824
 
 build:
   noarch: python
   number: 0
+  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - humanfilt=humanfilt.cli:main
 
@@ -33,7 +34,7 @@ requirements:
 test:
   commands:
     - humanfilt --help
-    - humanfilt run --mode wgs --input . --output . --report _noop.csv --threads 1 --no-auto-setup || true
+    - humanfilt 
 
 about:
   home: https://github.com/jprehn-lab/humanfilt
